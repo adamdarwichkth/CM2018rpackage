@@ -13,11 +13,6 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-hello <- function() {
-  print("Hello, world!")
-}
-
-
 ad_trial_data <- function(n_per_arm){
 
   n_samples <- n_per_arm
