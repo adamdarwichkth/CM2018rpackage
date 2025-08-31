@@ -13,6 +13,20 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
+# Lecture 1 - functions
+a_clinical_dataset <- function(){
+  rlnorm(10, 0,1)
+}
+
+another_clinical_dataset <- function(){
+  rnorm(10, 12, 2)
+}
+
+yet_another_clinical_dataset <- function(){
+  rnorm(250, 30, 6)
+}
+
+# seminar 1 - functions
 ad_trial_data <- function(n_per_arm){
 
   n_samples <- n_per_arm
