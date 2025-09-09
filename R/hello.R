@@ -77,7 +77,7 @@ the_bp_study <- function(k_sample){
 
   n_ids <- n_sample*2
 
-  id <- seq(0:n_ids)
+  id <- seq(1:n_ids)
   trt <- c(rep(0,n_sample),rep(1,n_sample))
   bp <- c(data_y1,data_y2)
 
