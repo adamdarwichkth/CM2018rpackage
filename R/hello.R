@@ -28,6 +28,32 @@ yet_another_clinical_dataset <- function(){
 
 #############################################################################
 ### seminar 1 - functions ###
+## seminar 1 - 2026 ##
+hpd_trial_data <- function(n_per_arm){
+
+  n_samples <- n_per_arm
+
+  x_nfl_control <- 3.354375
+  sd_nfl_control <- 0.4660144
+  e_nfl <- 0.75
+  x_nfl_trt <- log(exp(x_nfl_control) * e_nfl)
+
+  nfl_hpd <- rlnorm(n_samples, meanlog = x_nfl_control, sdlog = sd_nfl_control)
+  nfl_trt <- rlnorm(n_samples, meanlog = x_nfl_trt, sdlog = sd_nfl_control)
+
+  # create data frame
+  ID <- seq(1,n_samples,1)
+  GRP_HPD <- rep(0,n_samples)
+  GRP_TRT <- rep(1, n_samples)
+  ID <- c(ID,ID)
+  Group <- c(GRP_HPD, GRP_TRT)
+  NfL <- round(c(nfl_hpd, nfl_trt), digits = 3)
+
+  hpd_expstudy_dat <- data.frame(ID, Group, NfL)
+  return(hpd_expstudy_dat)
+}
+
+## seminar 1 - 2025 ##
 ad_trial_data <- function(n_per_arm){
 
   n_samples <- n_per_arm
